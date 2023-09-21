@@ -209,6 +209,7 @@ echo "*** Basic ***"
 
 # Run the Tiny Web server
 tiny_port=$(free_port)
+# tiny_port=55555 # hardcoded for testing
 echo "Starting tiny on ${tiny_port}"
 cd ./tiny
 ./tiny ${tiny_port}   &> /dev/null  &
@@ -220,6 +221,7 @@ wait_for_port_use "${tiny_port}"
 
 # Run the proxy
 proxy_port=$(free_port)
+# proxy_port=5000 # hardcoded for testing
 echo "Starting proxy on ${proxy_port}"
 ./proxy ${proxy_port}  &> /dev/null &
 proxy_pid=$!
